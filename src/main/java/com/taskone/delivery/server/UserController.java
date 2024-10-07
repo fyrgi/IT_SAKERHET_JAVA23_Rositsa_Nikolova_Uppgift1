@@ -1,5 +1,5 @@
 package com.taskone.delivery.server;
-
+import java.security.MessageDigest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,4 +19,5 @@ public class UserController {
 
     @PostMapping("/users/new")
     public User createUser(@RequestBody User user) { return userService.saveUser(user);}
+
 }
