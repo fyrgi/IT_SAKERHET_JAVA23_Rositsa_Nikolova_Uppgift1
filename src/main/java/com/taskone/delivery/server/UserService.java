@@ -1,7 +1,7 @@
 package com.taskone.delivery.server;
 
-import com.taskone.delivery.security.PasswordHashing;
-import com.taskone.delivery.security.PasswordHashing.*;
+    import com.taskone.delivery.security.PasswordHashing;
+    import com.taskone.delivery.security.PasswordHashing.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -28,4 +28,10 @@ public class UserService {
         userRepository.save(user);
         return user;
     }
+
+    public void deleteUser(Long userId){
+        userRepository.deleteById(userId);
+    }
+
+
 }

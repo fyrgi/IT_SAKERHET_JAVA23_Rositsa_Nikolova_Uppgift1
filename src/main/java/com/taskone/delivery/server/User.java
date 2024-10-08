@@ -7,27 +7,25 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String email, password, name, phone;
-    private String addressLineOne, addressLineTwo, postCode, city, country, comment;
-    private boolean agreement = false;
+    private String email, password, name, phone, address;
+    private String agreement = "false";
 
     public User(){}
-    public User(String addressLineOne, String addressLineTwo, boolean agreement, String city, String comment, String country, String email, String name, String password, String phone, String postCode ){
+    public User(String address, String agreement, String email, String name, String password, String phone){
         this.email = email;
         this.password = password;
         this.name = name;
         this.phone = phone;
-        this.addressLineOne = addressLineOne;
-        this.addressLineTwo = addressLineTwo;
-        this.postCode = postCode;
-        this.city = city;
-        this.country = country;
-        this.comment = comment;
+        this.address = address;
         this.agreement = agreement;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -62,59 +60,19 @@ public class User {
         this.phone = phone;
     }
 
-    public String getAddressLineOne() {
-        return addressLineOne;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddressLineOne(String addressLineOne) {
-        this.addressLineOne = addressLineOne;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getAddressLineTwo() {
-        return addressLineTwo;
-    }
-
-    public void setAddressLineTwo(String addressLineTwo) {
-        this.addressLineTwo = addressLineTwo;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public boolean isAgreement() {
+    public String isAgreement() {
         return agreement;
     }
 
-    public void setAgreement(boolean agreement) {
+    public void setAgreement(String agreement) {
         this.agreement = agreement;
     }
 }
