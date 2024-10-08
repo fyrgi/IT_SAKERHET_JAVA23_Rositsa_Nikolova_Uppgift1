@@ -20,6 +20,7 @@ public class User {
         this.agreement = agreement;
     }
 
+
     public Long getId() {
         return id;
     }
@@ -68,11 +69,25 @@ public class User {
         this.address = address;
     }
 
-    public String isAgreement() {
+    public String getAgreement() {
         return agreement;
     }
 
     public void setAgreement(String agreement) {
         this.agreement = agreement;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ",\nemail='" + email + '\'' +
+                ",\npassword='" + password + '\'' +
+                ",\nname='" + name + '\'' +
+                ",\nphone='" + phone + '\'' +
+                ",\naddress='" + address + '\'' +
+                ",\nagreement='" + agreement + '\'' + "}\n--------\n";
+    }
+
+
 }
