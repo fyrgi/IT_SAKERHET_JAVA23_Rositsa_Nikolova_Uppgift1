@@ -1,20 +1,28 @@
 package com.taskone.delivery.security;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import org.springframework.stereotype.Component;
 
+import java.security.MessageDigest;
+@Component
 public class PasswordHashing {
+    private final String salt = "AJhYhadKOsdm";
     public String hashPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] hash = md.digest(password.getBytes());
+            byte[] hashSalt = md.digest(salt.getBytes());
             StringBuilder hexString = new StringBuilder();
+            // implement salt first 64
+            for(byte b : hashSalt){
+                hexString.append(String.format("%02x", b));
+            }
+            // hash password 64 symbols
             for (byte b : hash) {
                 hexString.append(String.format("%02x", b));
             }
             System.out.println(hexString.toString());
             return hexString.toString();
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Error hashing password", e);
         }
     }

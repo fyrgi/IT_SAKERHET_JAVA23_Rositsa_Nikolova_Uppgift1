@@ -12,8 +12,7 @@ public class User {
     private boolean agreement = false;
 
     public User(){}
-    public User(Long id, String password, String email, String name, String phone, String addressLineOne, String addressLineTwo, String postCode, String city, String country, String comment, boolean agreement){
-        this.id = id;
+    public User(String addressLineOne, String addressLineTwo, boolean agreement, String city, String comment, String country, String email, String name, String password, String phone, String postCode ){
         this.email = email;
         this.password = password;
         this.name = name;
